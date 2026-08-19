@@ -1,0 +1,9 @@
+.env
+backend/target/
+.idea/
+.vscode/
+
+# Dữ liệu ACL và tài liệu nguồn do khách hàng cung cấp
+acl-tong-hop-*/
+acl-tong-hop-*.rar
+Windows_Permission_Management_Report.docx
