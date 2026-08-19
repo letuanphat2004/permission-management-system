@@ -17,7 +17,7 @@ Các địa chỉ mặc định:
 
 - Backend: `http://localhost:8080`
 - Health check: `http://localhost:8080/actuator/health`
-- MySQL từ máy host: `localhost:3306`
+- MySQL Docker từ máy host: `localhost:3307`
 
 Backend kết nối MySQL thông qua hostname nội bộ `mysql:3306`. Flyway tự động tạo và cập nhật cấu trúc database. Dữ liệu MySQL và file upload được giữ trong Docker named volume nên không mất khi tạo lại container.
 
@@ -33,15 +33,4 @@ docker-compose down
 
 Hướng dẫn đầy đủ nằm tại `README.md` ở thư mục gốc.
 
-## Chạy riêng backend với MySQL có sẵn
-
-Yêu cầu Java 21 và MySQL 8. Thiết lập biến môi trường trong terminal hiện tại:
-
-```powershell
-$env:DB_URL = 'jdbc:mysql://localhost:3306/window_authorizer?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC'
-$env:DB_USERNAME = 'window_app'
-$env:DB_PASSWORD = '<mat-khau-local>'
-.\mvnw.cmd spring-boot:run
-```
-
-Credential được cung cấp qua biến môi trường và không được commit vào source control.
+MySQL Server của dự án chỉ chạy trong Docker. MySQL Workbench có thể được dùng làm công cụ client để xem và quản trị database tại `127.0.0.1:3307`.

@@ -89,10 +89,10 @@ Các địa chỉ mặc định:
 |---|---|
 | Backend | `http://localhost:8080` |
 | Health check | `http://localhost:8080/actuator/health` |
-| MySQL từ máy host | `localhost:3306` |
+| MySQL Docker từ máy host | `localhost:3307` |
 | MySQL bên trong Docker | `mysql:3306` |
 
-Khi kết nối bằng MySQL Workbench, dùng `DB_USERNAME` và `DB_PASSWORD` trong `.env`.
+MySQL Workbench chỉ đóng vai trò công cụ quản trị. Để kết nối MySQL Docker, dùng host `127.0.0.1`, port `3307`, cùng `DB_USERNAME` và `DB_PASSWORD` trong `.env`.
 
 ## Các lệnh Docker thường dùng
 
@@ -155,4 +155,3 @@ WindowAuthorizer/
 ```
 
 MySQL là nguồn lưu dữ liệu ứng dụng, workflow và audit. Khi tích hợp AD ở giai đoạn sau, Active Directory vẫn là nguồn sự thật cho người dùng, nhóm và membership có hiệu lực.
-
